@@ -7,29 +7,23 @@ import java.io.InputStreamReader;
  */
 public class MealTime {
     public static void main(String[] args) {
+
+        askForWhatYouAteFor("breakfast");
+        askForWhatYouAteFor("lunch");
+        askForWhatYouAteFor("dinner");
+    }
+
+    public static void askForWhatYouAteFor(String meal) {
+
         try{
+
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-
-
-            System.out.println("What did you eat for breakfast?");
-            String yourBreakfast = bufferedReader.readLine();
-            System.out.println("Your had " + yourBreakfast + " for breakfast.");
-
-            System.out.println("What did you eat for lunch?");
-            String yourLunch = bufferedReader.readLine();
-            System.out.println("You had " + yourLunch + " for lunch.");
-
-            System.out.println("What did you eat for dinner?");
-            String yourDinner = bufferedReader.readLine();
-            System.out.println("You had " + yourDinner + " for dinner.");
-
-
-        }
-        catch(IOException e)
-        {
+            System.out.println("What did you eat for " + meal + "?");
+            String yourMeal = bufferedReader.readLine();
+            System.out.println("you had " + yourMeal + " for " + meal + ".");
+        }catch(IOException e) {
             e.printStackTrace();
         }
     }
-
 }
 
